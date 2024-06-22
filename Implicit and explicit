@@ -1,0 +1,45 @@
+public class DataTypeConversionDemo {
+    public static void main(String[] args) {
+        
+        byte myByte = 50;
+        short myShort = myByte;
+        int myInt = myShort;
+        long myLong = myInt;
+        float myFloat = myLong;
+        double myDouble = myFloat;
+
+        System.out.println("Implicit conversions:");
+        System.out.println("byte to short: " + myShort);
+        System.out.println("short to int: " + myInt);
+        System.out.println("int to long: " + myLong);
+        System.out.println("long to float: " + myFloat);
+        System.out.println("float to double: " + myDouble);
+
+        
+        double largeDouble = 123456789.123456789;
+        float largeFloat = (float) largeDouble;
+        long largeLong = (long) largeFloat;
+        int largeInt = (int) largeLong;
+        short largeShort = (short) largeInt;
+        byte largeByte = (byte) largeShort;
+
+        System.out.println("\nExplicit conversions:");
+        System.out.println("double to float: " + largeFloat);
+        System.out.println("float to long: " + largeLong);
+        System.out.println("long to int: " + largeInt);
+        System.out.println("int to short: " + largeShort);
+        System.out.println("short to byte: " + largeByte);
+
+        int intValue = 2147483647; 
+        System.out.println("\nOverflow scenario:");
+        System.out.println("Initial int value: " + intValue);
+        intValue = intValue + 1;
+        System.out.println("After overflow (int): " + intValue);
+
+        byte byteValue = 127; 
+        System.out.println("\nUnderflow scenario:");
+        System.out.println("Initial byte value: " + byteValue);
+        byteValue = (byte) (byteValue + 1);
+        System.out.println("After underflow (byte): " + byteValue);
+    }
+}
