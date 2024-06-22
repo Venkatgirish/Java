@@ -1,0 +1,23 @@
+public class MissingNumbersInSeries {
+    public static void main(String[] args) {
+        // Given series
+        int[] series = {1, 5, 11, 19};
+
+        // Print the given series
+        System.out.println("Given series:");
+        for (int num : series) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // Calculate and print the missing numbers
+        System.out.println("Missing numbers:");
+        int expectedNext = 0; // Start with n = 1
+        for (int n = 1; n <= series.length + 1; n++) {
+            int expected = (n * n - 1) / 2;
+            if (n - 1 < series.length && series[n - 1] != expected) {
+                System.out.println(expected);
+            }
+        }
+    }
+}
